@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踊れ！FUKUOKA - ダンスパフォーマンス参加者募集！</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        /* Full screen background gradient */
+        .full-background {
+            position: fixed; /* Use fixed positioning to cover the viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Changed from orange to a cool purple and pink gradient */
+            background-image: linear-gradient(to bottom right, #8a2be2 0%, #ff69b4 100%); /* Blue Violet to Hot Pink */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9; /* Slightly transparent to make content readable */
+            z-index: -1; /* Place it behind the content */
+        }
+        /* Content card styling */
+        .content-card {
+            position: relative;
+            z-index: 10; /* Display above the background */
+            background-color: white;
+            border-radius: 2.5rem; /* Slightly larger than rounded-3xl */
+            padding: 2.5rem; /* p-10 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+            max-width: 48rem; /* Slightly wider than max-w-2xl for better readability */
+            margin: 2rem auto; /* Top/bottom margin and centered */
+            transform: translateY(0); /* Initial state */
+            transition: transform 0.3s ease-in-out;
+        }
+        /* Hover effect to lift the card */
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Blink animation definition */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; } /* Stop at 30% transparency */
+        }
+        /* Apply blink class */
+        .blink {
+            animation: blink 2s linear infinite; /* Blink every 2 seconds, infinitely */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Full screen background gradient -->
+    <div class="full-background"></div>
+
+    <!-- Main Content Card -->
+    <div class="content-card w-full sm:p-8 lg:p-10">
+        <!-- Header Section -->
+        <header class="text-center mb-10 sm:mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-4 leading-tight">
+                踊れ！FUKUOKA
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-700 font-semibold mb-6">
+                福岡を元気にできる最高のダンスパフォーマー募集！！
+            </p>
+            <!-- ID added to make the deadline notice blink -->
+            <div id="deadline-notice" class="p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-lg shadow-md max-w-md mx-auto">
+                <p class="font-extrabold text-xl sm:text-2xl">
+                    <!-- Wrapped in a span tag with an ID to make only the text blink -->
+                    <span id="blinking-text">⚠️ 締め切り: 6月23日(月) ⚠️</span>
+                </p>
+            </div>
+        </header>
+
+        <!-- Event Highlights Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 mb-6 border-b-2 border-purple-300 pb-3">イベントハイライト</h2>
+            <ul class="space-y-4 text-lg text-gray-800">
+                <li class="flex items-start">
+                    <div class="ml-3"> <span class="font-semibold">福岡市役所西側ふれあい広場での野外パフォーマンス！</span><br>
+                        雨天決行で、どんな天候でもお子様が輝ける舞台です。
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <div class="ml-3"> <span class="font-semibold">高さ10mの巨大スクリーン前で踊る特別な体験！</span><br>
+                        お子様が主役となる、忘れられないパフォーマンスになります。<br>最高に楽しんでください！
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Participation Details Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-6 border-b-2 border-blue-300 pb-3">参加詳細</h2>
+            <div class="bg-blue-50 p-6 rounded-xl shadow-inner border border-blue-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg text-gray-800">
+                    <!-- Date -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div>
+                            <span class="font-semibold text-blue-600">日付:</span> 8/30(土)
+                        </div>
+                    </div>
+                    <!-- Location -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex flex-col">
+                            <span class="font-semibold text-blue-600">場所:</span>
+                            <span>福岡市役所西側ふれあい広場</span>
+                        </div>
+                    </div>
+                    <!-- Participation Fee -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div>
+                            <span class="font-semibold text-blue-600">参加費:</span> 2,000円/人
+                        </div>
+                    </div>
+                    <!-- Practice Fee -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div>
+                            <span class="font-semibold text-blue-600">練習費:</span> 500円/人
+                            <p class="text-sm text-gray-500 mt-1">※姉妹の場合、<br>2人目以上の練習費<span class="text-pink-600 font-bold">無料</span></p>
+                        </div>
+                    </div>
+                    <!-- Performance Time -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div>
+                            <span class="font-semibold text-blue-600">持ち時間:</span> 5分/1枠
+                        </div>
+                    </div>
+                    <!-- Performance Songs -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm col-span-1 md:col-span-2">
+                        <div class="flex flex-col space-y-1">
+                            <span class="font-semibold text-blue-600">出演曲:</span>
+                            <span>Bring em out &amp; TIKTOK</span>
+                            <span>Lean Back / move shake drop &amp; TikTok</span>
+                        </div>
+                    </div>
+                    <!-- Performance Schedule -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm col-span-1 md:col-span-2">
+                        <div>
+                            <span class="font-semibold text-blue-600">出演時間:</span> まだ未定のため、<span class="font-bold">日中参加可能な子</span>に限ります。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Schedule Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-green-700 mb-6 border-b-2 border-green-300 pb-3">練習スケジュール (場所: ポンプ場)</h2>
+            <div class="bg-green-50 p-6 rounded-xl shadow-inner border border-green-200">
+                <div class="space-y-6">
+                    <!-- Practice schedule for August 17th (Sun) -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-100 transform transition-transform duration-200 hover:scale-[1.01]">
+                        <p class="font-extrabold text-xl sm:text-2xl text-green-800 mb-3">
+                            8月17日(日)
+                        </p>
+                        <ul class="list-none space-y-2 pl-0 text-gray-800">
+                            <li class="flex items-start text-lg">
+                                <span class="text-green-600 font-bold mr-2">①</span>
+                                <div>
+                                    <span class="font-semibold">Bring em out &amp; TikTok</span>:
+                                    <span class="font-bold text-green-700">12時半〜15時半</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start text-lg">
+                                <span class="text-green-600 font-bold mr-2">②</span>
+                                <div>
+                                    <span class="font-semibold">Lean Back / move shake drop &amp; TikTok</span>:
+                                    <span class="font-bold text-green-700">15時半〜18時半</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Practice schedule for August 23rd (Sat) -->
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-100 transform transition-transform duration-200 hover:scale-[1.01]">
+                        <p class="font-extrabold text-xl sm:text-2xl text-green-800 mb-3">
+                            8月23日(土)
+                        </p>
+                        <ul class="list-none space-y-2 pl-0 text-gray-800">
+                            <li class="flex items-start text-lg">
+                                <span class="text-green-600 font-bold mr-2">①</span>
+                                <div>
+                                    <span class="font-semibold">Bring em out &amp; TikTok</span>:
+                                    <span class="font-bold text-green-700">15時半〜17時半</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start text-lg">
+                                <span class="text-green-600 font-bold mr-2">②</span>
+                                <div>
+                                    <span class="font-semibold">Lean Back / move shake drop &amp; TikTok</span>:
+                                    <span class="font-bold text-green-700">17時半〜20時</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 mt-6">
+                    ※TikTokはメイン曲を踊る子のみ対象です。<br>
+                    ※「Bring em out」後のTikTokは「Bring em out」を踊る子のみ、<br> 「Lean Back/move shake drop」後のTikTokも同様です。
+                </p>
+            </div>
+        </section>
+
+        <!-- Important Notes Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-red-700 mb-6 border-b-2 border-red-300 pb-3">参加にあたっての重要事項</h2>
+            <div class="bg-red-50 p-6 rounded-xl shadow-inner border border-red-200">
+                <ul class="space-y-3 text-lg text-gray-800">
+                    <li class="flex items-start">
+                        <div class="ml-2">
+                            <span class="font-semibold text-red-600">2025年1月までに入会した子のみ</span>
+                            が対象です。<br>（メイン曲の衣装を持っている子）
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="ml-2">
+                            参加費がかかりますので、周りの方に気兼ねなく、<br><span class="font-semibold text-red-600">心から「出たい！」と思ったお子様のみ</span>
+                            で大丈夫です！
+                        </div>
+                    </li>
+                     <li class="flex items-start">
+                        <div class="ml-2">
+                           <span class="font-semibold text-red-600">30日(土)はコンテストではありません。</span><br>
+                           <span class="text-sm text-gray-700 mt-1">zoom Aチーム等が参加するコンテストは、31日(日)となりますのでご注意ください。<br>また、コンテスト参加者は費用等も別途発生致しますので、ご了承ください。<br>詳細については別途ご連絡いたします。</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="text-center mt-12">
+            <p class="text-xl sm:text-2xl text-gray-800 mb-8 font-semibold">
+                お子様の成長と輝く姿を、ぜひこの機会にご覧ください！
+            </p>
+            <p class="text-lg text-gray-700 mb-10">
+                参加を希望される方は、<span class="font-bold text-red-600">6月23日(月)</span> までにお申し込みください。
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScZdDxZGmxSmRvv7kWnlYLd07nMXsylLN9q8LLo8HOBmHZzDA/viewform" class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-xl" target="_blank" rel="noopener noreferrer">
+                今すぐ申し込む！
+            </a>
+        </section>
+    </div>
+
+    <script>
+        // Run the script on the DOMContentLoaded event
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the text element to be blinked
+            const blinkingText = document.getElementById('blinking-text');
+
+            // Add the blink class only if the element exists
+            if (blinkingText) {
+                blinkingText.classList.add('blink');
+            }
+        });
+    </script>
+</body>
+</html>
